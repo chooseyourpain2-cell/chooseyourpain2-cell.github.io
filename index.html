@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>Fasub Hanal</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .loader {
+      position: absolute;
+      inset: 0;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 10;
+      gap: 15px;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #e5e7eb;
+      border-top-color: #2563eb;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="iframe-container">
+
+    <div class="loader" id="loader">
+      <div class="spinner"></div>
+      <div>Loading app...</div>
+    </div>
+
+    <iframe
+      src="https://script.google.com/macros/s/AKfycbwYhzKn8R8VORNA_N7wYU3R7pGBJjVMBc99GMkXa7bAByOy1rVs9wjmr72CYt4kJ4do/exec"
+      title="Google Sheets Web App"
+      onload="document.getElementById('loader').style.display='none';"
+      allowfullscreen>
+    </iframe>
+
+  </div>
+</body>
+</html>
